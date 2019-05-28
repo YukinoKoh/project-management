@@ -24,6 +24,8 @@ class QuestionAdmin(admin.ModelAdmin):
 
 class IssueAdmin(admin.ModelAdmin):
     list_display = ('title', 'priority', 'status')
+    ordering = ('priority',)
+    list_filter = ['status']
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'20'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
