@@ -21,7 +21,7 @@ a:link, a:visited {
 }
 
 a:focus, a:hover {
-    color: #813df1;
+    color: #bc87f4;
 }
 
 a:focus {
@@ -204,6 +204,9 @@ div.help ul {
 p img, h1 img, h2 img, h3 img, h4 img, td img {
     vertical-align: middle;
 }
+td img{
+  height: 16px;
+}
 
 .quiet, a.quiet:link, a.quiet:visited {
     color: #999;
@@ -248,6 +251,7 @@ table {
 
 td, th {
     font-size: 13px;
+    height: 16px;
     line-height: 16px;
     border-bottom: 1px solid #eee;
     vertical-align: top;
@@ -286,6 +290,7 @@ tr.alt {
 
 .row1 {
     background: #fff;
+    height: 16px;
 }
 
 .row2 {
@@ -464,7 +469,7 @@ a.button {
 .button:active, input[type=submit]:active, input[type=button]:active,
 .button:focus, input[type=submit]:focus, input[type=button]:focus,
 .button:hover, input[type=submit]:hover, input[type=button]:hover {
-    background: #609ab6;
+    background: #bc87f4;
 }
 
 .button[disabled], input[type=submit][disabled], input[type=button][disabled] {
@@ -481,7 +486,7 @@ a.button {
 .button.default:active, input[type=submit].default:active,
 .button.default:focus, input[type=submit].default:focus,
 .button.default:hover, input[type=submit].default:hover {
-    background: #205067;
+    background: #9a60f6;
 }
 
 .button[disabled].default,
@@ -571,8 +576,8 @@ ul.messagelist li.error {
     display: block;
     padding: 10px 12px;
     margin: 0 0 10px 0;
-    color: #ba2121;
-    border: 1px solid #ba2121;
+    color: #b00024;
+    border: 1px solid #b00024;
     border-radius: 4px;
     background-color: #fff;
     background-position: 5px 12px;
@@ -581,7 +586,7 @@ ul.messagelist li.error {
 ul.errorlist {
     margin: 0 0 4px;
     padding: 0;
-    color: #ba2121;
+    color: #b00024;
     background: #fff;
 }
 
@@ -621,7 +626,7 @@ td ul.errorlist li {
 }
 
 .errors input, .errors select, .errors textarea {
-    border: 1px solid #ba2121;
+    border: 1px solid #b00024;
 }
 
 div.system-message {
@@ -651,7 +656,7 @@ div.breadcrumbs {
     padding: 10px 40px;
     border: none;
     font-size: 14px;
-    color: #c4dce8;
+    color: #bc87f4;
     text-align: left;
 }
 
@@ -660,28 +665,32 @@ div.breadcrumbs a {
 }
 
 div.breadcrumbs a:focus, div.breadcrumbs a:hover {
-    color: #c4dce8;
+    color: #bc87f4;
 }
 
 /* ACTION ICONS */
 
 .viewlink, .inlineviewlink {
     padding-left: 16px;
+    height: 16px;
     background: url(../img/icon-viewlink.svg) 0 1px no-repeat;
 }
 
 .addlink {
     padding-left: 16px;
+    height: 16px;
     background: url(../img/icon-addlink.svg) 0 1px no-repeat;
 }
 
 .changelink, .inlinechangelink {
     padding-left: 16px;
+    height: 16px;
     background: url(../img/icon-changelink.svg) 0 1px no-repeat;
 }
 
 .deletelink {
     padding-left: 16px;
+    height: 16px;
     background: url(../img/icon-deletelink.svg) 0 1px no-repeat;
 }
 
@@ -945,7 +954,7 @@ table#change-history tbody th {
 
 
 .delete-confirmation form input[type="submit"] {
-    background: #ba2121;
+    background: #b00024;
     border-radius: 4px;
     padding: 10px 15px;
     color: #fff;
