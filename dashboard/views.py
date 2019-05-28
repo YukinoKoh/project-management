@@ -10,7 +10,7 @@ from .models import Choice, Question
 # Create your views here.
 
 class IndexView(generic.ListView):
-    template_name = 'polls/index.html'
+    template_name = 'dashboard/index.html'
     context_object_name = 'latest_question_list'
     def get_queryset(self):
         """
@@ -23,7 +23,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
-    template_name = 'polls/detail.html'
+    template_name = 'dashboard/detail.html'
     def get_queryset(self):
         """
         Excludes any questions that aren't published yet.
@@ -34,7 +34,7 @@ class DetailView(generic.DetailView):
 
 class ResultsView(generic.DetailView):
     model = Question
-    template_name = 'polls/results.html'
+    template_name = 'dashboard/results.html'
 
 
 def vote(request, question_id):
@@ -42,13 +42,13 @@ def vote(request, question_id):
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
-        return render(request, 'polls/detail.html',
+        return render(request, 'dashboard/detail.html',
                       {'question': question,
                        'error_message':"You didn't select a choice",})
     else:
         selected_choice.votes += 1
         selected_choice.save()
-        return HttpResponseRedirect(reverse('polls:results',
+        return HttpResponseRedirect(reverse('dashboard:results',
                                     args=(question.id,)))
 
 
