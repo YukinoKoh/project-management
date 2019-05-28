@@ -545,6 +545,7 @@ ul.timelist, .timelist li {
 
 /* RELATED WIDGET WRAPPER */
 .related-widget-wrapper {
+    height: 30px;
     float: left;       /* display properly in form rows with multiple fields */
     overflow: hidden;  /* clear floated contents */
 }
