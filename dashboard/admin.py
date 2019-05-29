@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Choice, Question, Issue
+from .models import Choice, Question, Issue, Task
 from django.forms import TextInput, Textarea
 from django.db import models
 
@@ -23,7 +23,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 class IssueAdmin(admin.ModelAdmin):
-    list_display = ('title', 'priority', 'status')
+    list_display = ('issue_title', 'priority', 'status')
     ordering = ('priority',)
     list_filter = ['status']
     formfield_overrides = {
@@ -36,3 +36,4 @@ class IssueAdmin(admin.ModelAdmin):
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
 admin.site.register(Issue, IssueAdmin)
+admin.site.register(Task)
