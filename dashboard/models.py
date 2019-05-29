@@ -30,9 +30,13 @@ class Issue(models.Model):
     STATUS_LIST = (('Open', 'Open'),
                    ('Progress', 'In Progress'),
                    ('Done', 'Done'))
-    status = models.CharField(max_length=8, choices=STATUS_LIST)
+    status = models.CharField(max_length=8, choices=STATUS_LIST, default='Open')
+    REVIEW_LIST = (('Draft', 'Draft'),
+                   ('Ready to review', 'Ready to review'),
+                   ('Approved', 'Approved'))
+    review = models.CharField(max_length=15, choices=REVIEW_LIST, default='Draft')  
     priority = models.IntegerField(default=1)
-    submitted_date = models.DateTimeField('date submitted', default=timezone.now)
+    submitted_date = models.DateTimeField('submitted date', default=timezone.now)
     objective = models.TextField(max_length=400, default='Objective is not defined.')
     description = models.TextField(max_length=800, default='description is not defined.')
     def __str__(self):

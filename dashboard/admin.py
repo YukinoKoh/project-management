@@ -22,18 +22,51 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 
+class TaskInline(admin.TabularInline):
+    model = Task
+    fields = ['task_title', 'status', 'priority']
+    ordering = ('priority',)
+
+
 class IssueAdmin(admin.ModelAdmin):
-    list_display = ('issue_title', 'priority', 'status')
+    # shown col in the dashboard table
+    list_display = ('issue_title', 'status', 'review', 'priority')
+    ordering = ('priority',)
+    list_filter = ['status', 'review']
+    # fold the sub info in detail pate
+    fieldsets = [
+        ('Status information', {'fields':['status', 'review', 'priority',
+                                          'submitted_date'],
+                                'classes':['collapse']}),
+        (None, {'fields':['issue_title', 'objective', 'description']}),
+    ]
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'20'})},
+        models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
+    }
+    inlines = [TaskInline]
+
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('task_title', 'status', 'priority')
     ordering = ('priority',)
     list_filter = ['status']
+    # fold the sub info in detail pate
+    fieldsets = [
+        ('Status information', {'fields':['status', 'priority',
+                                          'submitted_date'],
+                                'classes':['collapse']}),
+        (None, {'fields':['issue', 'task_title', 'description']}),
+    ]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'20'})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
     }
 
 
+
 # Register your models here.
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
 admin.site.register(Issue, IssueAdmin)
-admin.site.register(Task)
+admin.site.register(Task, TaskAdmin)
