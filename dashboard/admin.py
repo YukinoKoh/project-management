@@ -12,15 +12,15 @@ class TaskInline(admin.TabularInline):
 
 class IssueAdmin(admin.ModelAdmin):
     # shown col in the dashboard table
-    list_display = ('issue_title', 'status', 'review', 'priority')
+    list_display = ('issue_title', 'status', 'priority')
     ordering = ('priority',)
-    list_filter = ['status', 'review']
+    list_filter = ['status']
     # fold the sub info in detail pate
     fieldsets = [
-        ('Status information', {'fields':['status', 'review', 'priority',
+        ('Status information', {'fields':['priority',
                                           'submitted_date'],
                                 'classes':['collapse']}),
-        (None, {'fields':['issue_title', 'objective', 'description']}),
+        (None, {'fields':['status', 'issue_title', 'objective', 'description']}),
     ]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'20'})},
@@ -35,10 +35,10 @@ class TaskAdmin(admin.ModelAdmin):
     list_filter = ['status']
     # fold the sub info in detail pate
     fieldsets = [
-        ('Status information', {'fields':['status', 'priority',
+        ('Status information', {'fields':['priority',
                                           'submitted_date'],
                                 'classes':['collapse']}),
-        (None, {'fields':['issue', 'task_title', 'description']}),
+        (None, {'fields':['status', 'issue', 'task_title', 'description']}),
     ]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'20'})},
