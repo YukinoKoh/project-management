@@ -230,13 +230,13 @@ fieldset.collapsed h2 {
 }
 
 fieldset .collapse-toggle {
-    color: #5910de;
+    color: #fff;
 }
 
 fieldset.collapsed .collapse-toggle {
     background: transparent;
     display: inline;
-    color: #5910de;
+    color: #447e9b;
 }
 
 /* MONOSPACE TEXTAREAS */
@@ -437,7 +437,7 @@ body.popup .submit-row {
 }
 
 .inline-group .tabular tr.has_original td {
-    padding-top: 2em;
+    padding-top: 10px;
 }
 
 .inline-group .tabular tr td.original {

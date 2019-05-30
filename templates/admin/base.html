@@ -45,6 +45,8 @@
                         <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
                     {% endif %}
                 {% endif %}
+                <a href="/admin/dashboard/issue">ISSUES</a> / 
+                <a href="/admin/dashboard/task">TASKS</a> / 
                 {% if user.has_usable_password %}
                 <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
                 {% endif %}
@@ -80,7 +82,7 @@
         {% block object-tools %}{% endblock %}
         {{ content }}
         {% endblock %}
-        {% block sidebar %}{% endblock %}
+        <!-- {% block sidebar %}{% endblock %}-->
         <br class="clear">
     </div>
     <!-- END Content -->
