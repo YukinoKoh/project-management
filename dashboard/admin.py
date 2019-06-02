@@ -8,7 +8,7 @@ from django.utils.safestring import mark_safe
 
 class TaskInline(admin.TabularInline):
     model = Task
-    fields = ['status', 'priority']
+    fields = ['task_title', 'status', 'priority']
     ordering = ('priority',)
     show_change_link = True
 

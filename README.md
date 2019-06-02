@@ -15,7 +15,7 @@ If you are looking for simple task management tools that can share the project i
 
 ## Which file to customize?
 Followins are the list of which file to modify
-- Database structure (Issue, Tasks..): `dashboard/models.py`
+- Database structure (Issue, Tasks..): `dashboard/models.py` [After customising the model](#after-customising-the-model)
 - What to show, how function in the admin site: `dashboard/admin.py`
 - Admin site css: `static/admin/css/`
 - Admin site template html: `templates/admin/`
@@ -24,6 +24,14 @@ css and html files are copied from Django source files and copied to the app dir
 $ python -c "import django; print(django.__path__)"
 ```
 Foe example, to find the templates sources, navigate to `django/contrib/admin/templates`
+
+#### After customizing the model
+Before running the server, we need to migrate the model
+```
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
+```
 
 ### How to add/remove users with command line?
 - Add a user
