@@ -1,9 +1,9 @@
 This is a project manager app, based on  based on [Django](https://docs.djangoproject.com/en/2.2/).
 
-You can test the sample at [https://django-project-manager.appspot.com](https://django-project-manager.appspot.com), with admin:adminy and password:password.
+You can test the at [Sample page](https://django-project-manager.appspot.com/admin), with admin:adminy and password:password.
 
 ## For who?
-If you are looking for simple task management tool that can share the project issues and related tasks, this is for you.
+If you are looking for simple task management tools that can share the project issues and related tasks, this is for you.
 
 ## How to test locally?
 1. Modify some param in `mysite/settings.py`
@@ -12,11 +12,6 @@ If you are looking for simple task management tool that can share the project is
 
 2. Run the following command in the folder where `manage.py` locates.
 `$python manage.py runserver`
-
-## How to upload the app to the server?
-The test site is hosted with Google Cloud App engine.
-- [Google Cloud](https://cloud.google.com/python/django/appengine)
-- [AWS](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html)
 
 ## Which file to customize?
 Followins are the list of which file to modify
@@ -30,16 +25,21 @@ $ python -c "import django; print(django.__path__)"
 ```
 Foe example, to find the templates sources, navigate to `django/contrib/admin/templates`
 
-## How to add/remove users from terminal?
-- Add users
+### How to add/remove users with command line?
+- Add a user
 ```
 $python manage.py createsuperuser
 ```
-- Remove users
+- Remove a user
 ```
 $ python manage.py shell
 $ from django.contrib.auth.models import User
 $ User.objects.get(username="[TARGET_USERNAME]", is_superuser=True).delete()
 ```
 Although you can do similar action in the site, I note them in case someone forget their password.
+
+### How to upload the app to the server?
+The test site is hosted with Google Cloud App engine.
+- [Google Cloud](https://cloud.google.com/python/django/appengine)
+- [AWS](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html)
 
