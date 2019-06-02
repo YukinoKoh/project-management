@@ -6,7 +6,11 @@ You can test the sample at [https://django-project-manager.appspot.com](https://
 If you are looking for simple task management tool that can share the project issues and related tasks, this is for you.
 
 ## How to test locally?
-In the folder where `manage.py` locates, run the following command
+1. Modify some param in `mysite/settings.py`
+- TIME_ZONE: your [time zone](https://docs.djangoproject.com/en/2.2/ref/settings/#std:setting-TIME_ZONE) 
+- YOUR_SECRET_KEY: Random numbers and hcaractors,
+
+2. Run the following command in the folder where `manage.py` locates.
 `$python manage.py runserver`
 
 ## How to upload the app to the server?
@@ -14,7 +18,7 @@ The test site is hosted with Google Cloud App engine.
 - [Google Cloud](https://cloud.google.com/python/django/appengine)
 - [AWS](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html)
 
-## Which file to customized?
+## Which file to customize?
 Followins are the list of which file to modify
 - Database structure (Issue, Tasks..): `dashboard/models.py`
 - What to show, how function in the admin site: `dashboard/admin.py`
@@ -37,5 +41,5 @@ $ python manage.py shell
 $ from django.contrib.auth.models import User
 $ User.objects.get(username="[TARGET_USERNAME]", is_superuser=True).delete()
 ```
-
+Although you can do similar action in the site, I note them in case someone forget their password.
 
