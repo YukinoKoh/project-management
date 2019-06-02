@@ -25,7 +25,7 @@ $ python -c "import django; print(django.__path__)"
 ```
 Foe example, to find the templates sources, navigate to `django/contrib/admin/templates`
 
-#### After customizing the model
+#### After customising the model
 Before running the server, we need to migrate the model
 ```
 $ python manage.py makemigrations
